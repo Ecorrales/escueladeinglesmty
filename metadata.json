@@ -1,0 +1,6 @@
+{
+  "name": "Clases de Inglés Mty",
+  "description": "Capacitación especializada en inglés corporativo y de negocios para profesionales y empresas en Monterrey, México y Estados Unidos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
