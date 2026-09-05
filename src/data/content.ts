@@ -5,6 +5,7 @@ export const SITE_INFO = {
   formattedPhone: "+52 81 1218 9877",
   displayPhone: "81 1218 9877",
   whatsappUrl: "https://wa.me/528112189877?text=Hola,%20solicito%20informaci%C3%B3n%20sobre%20capacitaci%C3%B3n%20en%20ingl%C3%A9s%20corporativo%20para%20mi%20empresa.",
+  linkedinUrl: "https://www.linkedin.com/company/clases-de-ingl%C3%A9s-mty/posts/?feedView=all",
   headquarters: "Monterrey, Nuevo León, México",
   foundedYear: 2011,
   combinedExperience: "36+ Años",

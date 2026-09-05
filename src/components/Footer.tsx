@@ -119,13 +119,14 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
 
               <a
                 id="footer-linkedin-link"
-                href="https://www.linkedin.com/company/clases-de-inglés-mty/"
+                href={SITE_INFO.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2.5 text-[#382F2A] hover:text-[#7E913C] font-normal transition-colors"
+                aria-label="Clases de Inglés MTY en LinkedIn"
               >
                 <Linkedin className="w-4 h-4 text-[#7E913C]" />
-                <span>LinkedIn: Clases de Inglés Mty</span>
+                <span>LinkedIn: Clases de Inglés MTY</span>
               </a>
 
               <div className="flex items-center gap-2.5 text-[#645850] pt-1">
