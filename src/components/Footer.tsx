@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageSquare, ShieldCheck, MapPin } from 'lucide-react';
+import { Phone, MessageSquare, ShieldCheck, MapPin, Linkedin } from 'lucide-react';
 import { Language } from '../types';
 import { CONTENT, SITE_INFO } from '../data/content';
 import { Logo } from './Logo';
@@ -13,29 +13,6 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
 
   return (
     <footer className="bg-white border-t border-[#E7E3DC] text-[#645850] text-xs">
-      {/* Top micro summary banner */}
-      <div className="border-b border-[#E7E3DC] py-5 px-4 sm:px-6 lg:px-8 bg-[#FAF9F6]">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <div className="flex items-center gap-3">
-            <Logo size="sm" showWordmark={false} />
-            <div>
-              <span className="font-semibold text-[#382F2A] text-xs">
-                {SITE_INFO.name}
-              </span>
-              <span className="text-[#7A6F67]/50 mx-2">•</span>
-              <span className="text-[#645850] text-xs">
-                {lang === 'es' ? 'Capacitación en Inglés B2B para Empresas y Ejecutivos' : 'B2B English Training for Enterprises & Executives'}
-              </span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 text-[#7E913C] font-semibold text-xs">
-            <ShieldCheck className="w-4 h-4 text-[#7E913C]" />
-            <span>{lang === 'es' ? 'Certificación DipTESOL & Lic. TEFL · Facturación CFDI' : 'DipTESOL & TEFL Certified · CFDI Tax Invoicing'}</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
@@ -53,8 +30,31 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
             </p>
 
             <div className="pt-2 text-xs text-[#7A6F67] space-y-1">
-              <div><strong className="text-[#382F2A]">Directores Pedagógicos:</strong> Trinity DipTESOL & Licenciatura en TEFL</div>
-              <div><strong className="text-[#382F2A]">Experiencia acumulada:</strong> {SITE_INFO.combinedExperience} pedagógica</div>
+              <div>
+                <strong className="text-[#382F2A]">
+                  {lang === 'es' ? 'Directores Pedagógicos:' : 'Academic Directors:'}
+                </strong>{' '}
+                Trinity DipTESOL & Licenciatura en TEFL
+              </div>
+              <div>
+                <strong className="text-[#382F2A]">
+                  {lang === 'es' ? 'Experiencia acumulada:' : 'Combined experience:'}
+                </strong>{' '}
+                {lang === 'es' ? '36+ años de trayectoria' : '36+ years of pedagogical expertise'}
+              </div>
+            </div>
+
+            <div className="pt-2">
+              <a
+                id="footer-brand-linkedin-pill"
+                href="https://www.linkedin.com/company/clases-de-inglés-mty/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-1.5 border border-[#E7E3DC] bg-[#FAF9F6] text-xs font-semibold text-[#382F2A] hover:text-[#7E913C] hover:border-[#7E913C] transition-colors"
+              >
+                <Linkedin className="w-3.5 h-3.5 text-[#7E913C]" />
+                <span>{lang === 'es' ? 'Conectar en LinkedIn' : 'Connect on LinkedIn'}</span>
+              </a>
             </div>
           </div>
 
@@ -117,6 +117,17 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
                 <span>WhatsApp: +52 81 1218 9877</span>
               </a>
 
+              <a
+                id="footer-linkedin-link"
+                href="https://www.linkedin.com/company/clases-de-inglés-mty/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2.5 text-[#382F2A] hover:text-[#7E913C] font-normal transition-colors"
+              >
+                <Linkedin className="w-4 h-4 text-[#7E913C]" />
+                <span>LinkedIn: Clases de Inglés Mty</span>
+              </a>
+
               <div className="flex items-center gap-2.5 text-[#645850] pt-1">
                 <MapPin className="w-4 h-4 text-[#7A6F67] shrink-0" />
                 <span>{SITE_INFO.headquarters} (Presencial & Online Global)</span>
@@ -135,11 +146,22 @@ export const Footer: React.FC<FooterProps> = ({ lang }) => {
 
       {/* Bottom copyright line */}
       <div className="border-t border-[#E7E3DC] bg-[#FAF9F6] py-5 px-4 sm:px-6 lg:px-8 text-[#7A6F67] text-xs">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <p>© {new Date().getFullYear()} {SITE_INFO.name}. {t.rights}</p>
-          <p className="text-[#7A6F67] text-xs">
-            Monterrey, Nuevo León, México · Clases de Inglés Mty
-          </p>
+          <div className="flex items-center gap-4 text-xs text-[#7A6F67]">
+            <a
+              id="footer-bottom-linkedin-link"
+              href="https://www.linkedin.com/company/clases-de-inglés-mty/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[#382F2A] hover:text-[#7E913C] transition-colors font-medium"
+            >
+              <Linkedin className="w-3.5 h-3.5 text-[#7E913C]" />
+              <span>LinkedIn</span>
+            </a>
+            <span className="text-[#D5DFC0]">•</span>
+            <span>Monterrey, Nuevo León, México</span>
+          </div>
         </div>
       </div>
     </footer>

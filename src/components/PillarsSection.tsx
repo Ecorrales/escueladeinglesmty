@@ -143,7 +143,9 @@ export const PillarsSection: React.FC<PillarsSectionProps> = ({ lang, onOpenQuot
 
                 <div className="p-4 bg-white border border-[#E7E3DC] text-xs text-[#645850] flex items-center justify-between">
                   <span className="font-medium text-[#382F2A]">{lang === 'es' ? 'Respaldo metodológico DipTESOL & TEFL' : 'DipTESOL & TEFL methodology'}</span>
-                  <span className="text-[#7E913C] font-semibold">{SITE_INFO.combinedExperience} exp.</span>
+                  <span className="text-[#7E913C] font-semibold">
+                    {lang === 'es' ? `${SITE_INFO.combinedExperience} exp.` : `${SITE_INFO.combinedExperienceEn} exp.`}
+                  </span>
                 </div>
               </div>
 

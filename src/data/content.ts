@@ -7,7 +7,9 @@ export const SITE_INFO = {
   whatsappUrl: "https://wa.me/528112189877?text=Hola,%20solicito%20informaci%C3%B3n%20sobre%20capacitaci%C3%B3n%20en%20ingl%C3%A9s%20corporativo%20para%20mi%20empresa.",
   headquarters: "Monterrey, Nuevo León, México",
   foundedYear: 2011,
-  combinedExperience: "36+ años",
+  combinedExperience: "36+ Años",
+  combinedExperienceEn: "36+ Years",
+  linkedinUrl: "https://www.linkedin.com/company/clases-de-inglés-mty/",
   modality: "100% En Línea para Empresas en México y EE.UU.",
   certifications: [
     {
@@ -41,12 +43,12 @@ export const SITE_INFO = {
 export const CONTENT = {
   es: {
     nav: {
-      pillars: "Pilares Metodológicos",
-      programs: "Programas Corporativos",
-      assessment: "Evaluador de Necesidades",
-      whyUs: "¿Por Qué Nosotros?",
-      faq: "Preguntas Frecuentes",
-      contact: "Contacto B2B",
+      pillars: "Método",
+      programs: "Programas",
+      assessment: "Evaluador",
+      whyUs: "Nosotros",
+      faq: "FAQ",
+      contact: "Contacto",
       requestQuote: "Solicitar Propuesta",
       phoneLabel: "Llamar: 81 1218 9877"
     },

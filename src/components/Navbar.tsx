@@ -90,18 +90,10 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenQuote }) =>
             title="Clases de Inglés Mty - Inicio"
           >
             <Logo size="md" />
-            <div className="hidden md:block pl-3 border-l border-[#E7E3DC]">
-              <p className="text-xs font-medium text-[#7A6F67]">
-                Capacitación en Inglés B2B
-              </p>
-              <p className="text-[11px] text-[#7E913C] font-normal">
-                Desde 2011 · Monterrey
-              </p>
-            </div>
           </a>
 
           {/* Desktop Navigation links - Warm, academic Source Sans 3 */}
-          <nav className="hidden xl:flex items-center gap-7 text-sm font-normal text-[#645850]">
+          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 text-sm font-normal text-[#645850] whitespace-nowrap">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -114,26 +106,28 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenQuote }) =>
           </nav>
 
           {/* Right actions: Language toggle + Quote CTA */}
-          <div className="hidden sm:flex items-center gap-4">
+          <div className="hidden sm:flex items-center gap-3">
             {/* Language Switcher */}
             <button
               id="language-switcher-btn"
               onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#E7E3DC] bg-[#FAF9F6] text-xs font-semibold text-[#382F2A] hover:text-[#7E913C] hover:border-[#7E913C] transition-colors cursor-pointer"
-              title="Cambiar idioma / Switch language"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1.5 border border-[#E7E3DC] bg-[#FAF9F6] text-xs font-semibold text-[#382F2A] hover:text-[#7E913C] hover:border-[#7E913C] transition-colors cursor-pointer whitespace-nowrap shrink-0 flex-nowrap"
+              title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+              aria-label="Switch language"
             >
-              <Globe2 className="w-3.5 h-3.5 text-[#7E913C]" />
-              <span>{lang.toUpperCase()}</span>
-              <span className="text-[#7A6F67] text-[11px]">⇄ {lang === 'es' ? 'EN' : 'ES'}</span>
+              <Globe2 className="w-3.5 h-3.5 text-[#7E913C] shrink-0" />
+              <span className="whitespace-nowrap font-semibold">
+                {lang === 'es' ? 'ES ⇄ EN' : 'EN ⇄ ES'}
+              </span>
             </button>
 
             {/* Direct Dial button */}
             <a
               id="nav-direct-call-btn"
               href={`tel:${SITE_INFO.phone}`}
-              className="hidden md:inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-[#382F2A] hover:text-[#7E913C] transition-colors"
+              className="hidden xl:inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-[#382F2A] hover:text-[#7E913C] transition-colors whitespace-nowrap"
             >
-              <Phone className="w-3.5 h-3.5 text-[#7E913C]" />
+              <Phone className="w-3.5 h-3.5 text-[#7E913C] shrink-0" />
               <span>{SITE_INFO.displayPhone}</span>
             </a>
 
@@ -141,25 +135,29 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenQuote }) =>
             <button
               id="nav-quote-cta-btn"
               onClick={onOpenQuote}
-              className="inline-flex items-center gap-2 bg-[#382F2A] hover:bg-[#7E913C] text-white py-2.5 px-4 text-xs font-semibold tracking-wide uppercase transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 bg-[#382F2A] hover:bg-[#7E913C] text-white py-2 px-3.5 text-xs font-semibold tracking-wide uppercase transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
               <span>{t.requestQuote}</span>
               <ArrowRight className="w-3.5 h-3.5 text-[#EBF0D8]" />
             </button>
           </div>
 
-          {/* Mobile menu hamburger */}
-          <div className="flex sm:hidden items-center gap-2">
+          {/* Mobile/Tablet menu hamburger */}
+          <div className="flex lg:hidden items-center gap-2">
             <button
+              id="mobile-language-switcher-btn"
               onClick={() => setLang(lang === 'es' ? 'en' : 'es')}
-              className="px-2.5 py-1 border border-[#E7E3DC] text-xs font-bold text-[#382F2A]"
+              className="sm:hidden inline-flex items-center gap-1 px-2 py-1 border border-[#E7E3DC] bg-[#FAF9F6] text-xs font-semibold text-[#382F2A] whitespace-nowrap shrink-0"
+              title={lang === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+              aria-label="Switch language"
             >
-              {lang.toUpperCase()}
+              <Globe2 className="w-3 h-3 text-[#7E913C] shrink-0" />
+              <span className="whitespace-nowrap">{lang === 'es' ? 'ES ⇄ EN' : 'EN ⇄ ES'}</span>
             </button>
             <button
               id="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-[#382F2A] hover:text-[#7E913C] focus:outline-none"
+              className="p-2 text-[#382F2A] hover:text-[#7E913C] focus:outline-none cursor-pointer"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -170,7 +168,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, onOpenQuote }) =>
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div id="mobile-nav-drawer" className="sm:hidden bg-white border-b border-[#E7E3DC] px-6 py-6 space-y-5">
+        <div id="mobile-nav-drawer" className="lg:hidden bg-white border-b border-[#E7E3DC] px-6 py-6 space-y-5">
           <nav className="flex flex-col space-y-3 text-sm font-medium text-[#645850]">
             {navLinks.map((link) => (
               <a

@@ -110,7 +110,7 @@ export const CredentialsSection: React.FC<CredentialsSectionProps> = ({ lang }) 
 
             <div className="lg:col-span-4 flex flex-col items-center justify-center p-7 bg-[#FAF9F6] border border-[#E7E3DC] text-center space-y-2">
               <span className="text-4xl font-normal text-[#382F2A]">
-                {SITE_INFO.combinedExperience}
+                {lang === 'es' ? '36+ Años' : '36+ Years'}
               </span>
               <span className="text-xs font-semibold text-[#7E913C]">
                 {lang === 'es' ? 'Experiencia Pedagógica Conjunta' : 'Combined Experience'}

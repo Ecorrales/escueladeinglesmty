@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ lang, onOpenQuote, onScrollToCalcula
           <div className="inline-flex items-center gap-2.5 border border-[#D5DFC0] bg-[#F4F7EA] px-3.5 py-1.5 mb-6">
             <Logo variant="icon-only" size="sm" className="w-5 h-5" />
             <p className="text-xs text-[#7E913C] font-semibold">
-              {SITE_INFO.combinedExperience} {lang === 'es' ? 'de experiencia docente conjunta' : 'combined teaching experience'} · EST. 2011 MTY
+              {lang === 'es' ? '36+ Años de experiencia docente conjunta' : '36+ Years of combined teaching experience'} · EST. 2011 MTY
             </p>
           </div>
 

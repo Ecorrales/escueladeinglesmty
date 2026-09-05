@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, MessageSquare, Mail, MapPin, Send, CheckCircle2, Clock, Building, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Phone, MessageSquare, Mail, MapPin, Send, CheckCircle2, Clock, Building, ShieldCheck, ArrowRight, Linkedin } from 'lucide-react';
 import { Language, B2BQuoteRequest } from '../types';
 import { CONTENT, SITE_INFO } from '../data/content';
 
@@ -298,6 +298,23 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ lang, prefilledD
                 >
                   <MessageSquare className="w-4 h-4 text-[#7E913C]" />
                   <span>{t.directChannels.whatsappAction}</span>
+                </a>
+              </div>
+
+              {/* LinkedIn company profile */}
+              <div className="p-3 bg-[#FAF9F6] border border-[#E7E3DC] flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Linkedin className="w-4 h-4 text-[#7E913C] shrink-0" />
+                  <span className="text-xs font-semibold text-[#382F2A]">LinkedIn</span>
+                </div>
+                <a
+                  id="direct-contact-linkedin-link"
+                  href={SITE_INFO.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-[#7E913C] hover:text-[#382F2A] font-semibold transition-colors"
+                >
+                  {lang === 'es' ? 'Ver Perfil Corporativo →' : 'View Company Profile →'}
                 </a>
               </div>
 
