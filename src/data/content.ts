@@ -10,7 +10,6 @@ export const SITE_INFO = {
   foundedYear: 2011,
   combinedExperience: "36+ Años",
   combinedExperienceEn: "36+ Years",
-  linkedinUrl: "https://www.linkedin.com/company/clases-de-inglés-mty/",
   modality: "100% En Línea para Empresas en México y EE.UU.",
   certifications: [
     {
